@@ -1,2 +1,2 @@
 # finansol
-A web application to track and manage costs, spend wise, and save more. 
+A web application to track and manage costs, spends, and saving.
