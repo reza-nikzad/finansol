@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
-ruby '3.2.5'
-gem 'webpacker'
+ruby "3.2.5"
+gem "webpacker"
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
