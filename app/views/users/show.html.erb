@@ -1,0 +1,8 @@
+<h1>Your Profile</h1>
+
+<p><strong>Name:</strong> <%= current_user.username %></p>
+<p><strong>Email:</strong> <%= current_user.email %></p>
+<p><strong>Created At:</strong> <%= current_user.created_at %></p>
+
+<%= link_to 'Edit Profile', edit_user_registration_path %> <!-- Link to edit user profile if using Devise -->
+<%= link_to 'Logout', destroy_user_session_path, method: :delete %> <!-- Link to logout -->

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Sign Up</title>
+</head>
+<body>
+    <h2>Welcome to Finansol!</h2>
+
+    <% if user_signed_in? %>
+        <p>Hello, <%= current_user.username %>!</p>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        
+    <% else %>
+        <h2>Login</h2>
+        <%= form_for(:user, url: session_path(:user)) do |f| %>
+            <div>
+                <%= f.label :email %><br>
+                <%= f.email_field :email, required: true %>
+            </div>
+
+            <div>
+                <%= f.label :password %><br>
+                <%= f.password_field :password, required: true %>
+            </div>
+
+            <div>
+                <%= f.submit "Login" %>
+            </div>
+
+            <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary' %>
+        <% end %>
+    <% end %>
+</body>
+</html>

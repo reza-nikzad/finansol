@@ -1,8 +1,5 @@
-// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import "@hotwired/turbo-rails"
-import "controllers"
-
-console.log("JavaScript is active with import maps!");
+import Rails from '@rails/ujs';
+Rails.start();
 
 // babel.config.js
 module.exports = {
@@ -15,3 +12,7 @@ module.exports = {
       '@babel/plugin-proposal-private-property-in-object' // Add this line
     ]
   };
+
+console.log("JavaScript is active with import maps!");
+
+  
