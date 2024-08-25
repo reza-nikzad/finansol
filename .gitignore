@@ -1,5 +1,7 @@
 # Used by dotenv library to load environment variables.
-# .env
+.env
+/.env*
+!/.env*.erb
 
 # Ignore Byebug command history file.
 .byebug_history
@@ -39,10 +41,6 @@ Gemfile.lock
 # Ignore bundler config.
 /.bundle
 
-# Ignore all environment files (except templates).
-/.env*
-!/.env*.erb
-
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -75,3 +73,26 @@ Gemfile.lock
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+# Ignore bundler config
+/.bundle
+
+# Ignore database files
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore Webpack files
+/bin/webpack
+/bin/webpack-dev-server
+
+# Ignore system files
+.DS_Store
+
+# Ignore the node_modules directory
+/node_modules/
