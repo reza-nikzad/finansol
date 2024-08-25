@@ -26,7 +26,6 @@ build-iPhoneSimulator/
 /lib/bundler/man/
 
 Gemfile.lock
-.ruby-version
 .ruby-gemset
 
 *.gem
