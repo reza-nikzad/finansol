@@ -1,0 +1,38 @@
+<h1>Add Expenses</h1>
+
+<%= form_with url: expenses_path, method: :post, id: "expenses_form" do |f| %>
+  <div id="expenses_list">
+    <div class="expense_item">
+      <input type="text" name="expenses[][description]" placeholder="Description" required>
+      <input type="number" name="expenses[][amount]" placeholder="Amount" required>
+      <button type="button" class="remove_expense_button">Remove</button>
+    </div>
+  </div>
+<div><button type="button" id="add_expense_button">Add Expense</button></div>
+  <%= f.submit "Save", id: "save_button" %>
+<% end %>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const addExpenseButton = document.getElementById('add_expense_button');
+    const expensesList = document.getElementById('expenses_list');
+
+    addExpenseButton.addEventListener('click', () => {
+      const expenseFields = `
+        <div class="expense_item">
+          <input type="text" name="expenses[][description]" placeholder="Description" required>
+          <input type="number" name="expenses[][amount]" placeholder="Amount" required>
+          <button type="button" class="remove_expense_button">Remove</button>
+        </div>
+      `;
+      expensesList.insertAdjacentHTML('beforeend', expenseFields);
+    });
+
+    expensesList.addEventListener('click', (e) => {
+      if (e.target.classList.contains('remove_expense_button')) {
+        e.target.closest('.expense_item').remove();
+      }
+    });
+  });
+</script>

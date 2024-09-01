@@ -4,4 +4,10 @@ Rails.application.routes.draw do
   get "about", to: "home#about"
   resources :users
   resource :user, only: [ :show ]
+
+  resources :expenses do
+    collection do
+      get "expense_form", to: "expenses#expense_form"
+    end
+  end
 end
